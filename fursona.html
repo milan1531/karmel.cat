@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karmel.Cat - Fursona</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #1e1f2b, #151621);
+      color: #f2f2f2;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: #14151f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f2f2f2;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: #dcdcdc;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* WRAPPER */
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+
+    /* BANER */
+    .banner {
+      width: 100%;
+      max-width: 900px;
+      height: 260px;
+      border-radius: 20px;
+      background: url('baner2.png') center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .banner h1 {
+      background: rgba(0,0,0,0.45);
+      padding: 18px 32px;
+      border-radius: 14px;
+      font-size: 2.2rem;
+    }
+
+    /* OPIS */
+    .about {
+      max-width: 800px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .about p {
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    /* ZDJĘCIE POD OPISEM */
+    .single-image {
+      max-width: 600px;
+    }
+
+    .single-image img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+    }
+
+    /* GALERIA */
+    .gallery {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .arrow {
+      font-size: 2.5rem;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.7;
+    }
+
+    .arrow:hover {
+      opacity: 1;
+    }
+
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      flex: 1;
+    }
+
+    .slot img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 700px) {
+      .slots {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Karmel.cat</a>
+      <div class="nav-links">
+        <a href="fursona.html">Fursona</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+    <!-- BANER -->
+    <div class="banner">
+      <h1>🐾 Moja fursona</h1>
+    </div>
+
+    <!-- OPIS (MOŻESZ ZMIENIĆ TEKST) -->
+    <section class="about">
+      <p>🐈 To jest Karmel, chodź znajomi często mówią na mnie Nexiak lub Krami. To mój uroczy kociak, którym przedstawiam się w internecie i fandomie futrzaków. Kromek jest 11-letnim kotem domowym, który jest zawsze chętny na przytulasy i head paty OwO.</p>
+         </section>
+
+    <!-- ZDJĘCIE POD OPISEM -->
+    <div class="single-image">
+      <img src="zdjecie1.png" alt="Fursona" />
+    </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karmel.Cat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #1e1f2b, #151621);
+      color: #f2f2f2;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    /* BANER */
+    .banner {
+      width: 100%;
+      max-width: 900px;
+      height: 260px;
+      border-radius: 20px;
+      background: url('baner1.png') center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    .banner h1 {
+      background: rgba(0,0,0,0.45);
+      padding: 18px 30px;
+      border-radius: 14px;
+      font-size: 2.2rem;
+    }
+
+    /* SEKCJA O MNIE */
+    .about {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 20px;
+      padding: 40px 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .about h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .about p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .banner {
+        height: 200px;
+      }
+
+      .banner h1 {
+        font-size: 1.6rem;
+      }
+    }
+  
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: #14151f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f2f2f2;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: #dcdcdc;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+  </style>
+<link rel="stylesheet" href="style.css">
+</style>
+</head>
+<body>
+
+  <!-- NAWIGACJA -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Karmel.cat</a>
+      <div class="nav-links">
+        <a href="fursona.html">Fursona</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+    <!-- BANER NA ŚRODKU -->
+    <div class="banner">
+      <h1>Cześć, jestem Karmel 👋</h1>
+    </div>
+
+    <!-- O MNIE -->
+    <section class="about">
+  <h2>O mnie</h2>
+
+  <p>Hej! Mam 15 lat i pochodzę z Kielc. Aktualnie uczę się w 8 klasie szkoły podstawowej.</p>
+
+  <p>Zajmuję się tworzeniem map oraz modeli 3D w programach takich jak Roblox Studio oraz Blender. Prowadzę też własną grę ro-transportową pod nazwą <strong>PKS Ujazd</strong>.</p>
+
+  <p>Jestem furrasem – moja fursona to brązowy kotek o imieniu <strong>Karmel</strong>. Znajomi twierdzą, że jest całkiem uroczy (i trudno się z nimi nie zgodzić 👀).</p>
+
+  <p>Poza główną grą angażuję się w projekty takie jak <strong>Polish Roads</strong>, <strong>P:SEP</strong> oraz próbuję dostać się na stanowisko developera w grze <strong>Diamentowego</strong>.</p>
+
+  <p>Mówię po polsku (native), uczę się angielskiego na poziomie B1 i znam podstawy języka czeskiego oraz niemieckiego – ale bez obietnic, że się dogadamy 😅</p>
+</section>
+
+  </div>
+
+</body>
+</html>
