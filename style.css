@@ -196,3 +196,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+body {
+    cursor: url("kiwi1.png"), auto;
+}
