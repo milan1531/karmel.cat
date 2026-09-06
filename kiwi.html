@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil z odliczaniem</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Zielono-białe animowane tło CSS */
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #0a2e1d, #1e5128, #4e9f3d, #d8f3dc);
+      background-size: 400% 400%;
+      animation: gradientBg 12s ease infinite;
+    }
+
+    @keyframes gradientBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Karta profilu */
+    .card {
+      background: rgba(10, 20, 15, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 30px 40px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      color: #ffffff;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .avatar-container {
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .username {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #b7e4c7;
+      margin-bottom: 25px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .social-link {
+      color: #ffffff;
+      font-size: 1.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      color: #52b788;
+      transform: translateY(-3px);
+    }
+
+    /* Licznik */
+    .countdown-title {
+      font-size: 0.85rem;
+      color: #b7e4c7;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+      min-width: 65px;
+    }
+
+    .time-number {
+      font-size: 1.3rem;
+      font-weight: bold;
+      display: block;
+    }
+
+    .time-label {
+      font-size: 0.7rem;
+      color: #b7e4c7;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar-container">
+      <img src="kiku.png" alt="Avatar" class="avatar">
+    </div>
+
+    <h1 class="username">Nexiaczek</h1>
+
+    <div class="socials">
+      <a href="https://discord.gg/B5GEHTjqJh" target="_blank" class="social-link" title="Discord"><i class="fab fa-discord"></i></a>
+      <a href="https://open.spotify.com/user/31nss5bszqbnhshge6ch2xkjdkia?si=f34ea1191d6f4843" target="_blank" class="social-link" title="Spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://github.com/milan1531" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+
+    <div class="countdown-title">Urodziny za:</div>
+    <div class="timer">
+      <div class="time-box">
+        <span class="time-number" id="days">00</span>
+        <span class="time-label">Dni</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="hours">00</span>
+        <span class="time-label">Godz</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="minutes">00</span>
+        <span class="time-label">Min</span>
+      </div>
+      <div class="time-box">
+        <span class="time-number" id="seconds">00</span>
+        <span class="time-label">Sek</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("October 23, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
